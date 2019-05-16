@@ -608,9 +608,11 @@ NotePadProvider.java：**
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190516191717294.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
 
 **根据创建时间排序：**
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190516191806430.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
 
 **根据修改时间排序：**
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190516191822380.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
 
 #### 4、对字体大小颜色进行改变
