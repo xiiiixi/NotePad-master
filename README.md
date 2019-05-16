@@ -9,7 +9,8 @@
 ## 一、实验内容
 笔记本应用：
 基本要求：1、NoteList中显示条目增加时间戳显示
-                   2、添加笔记查询功能（根据标题查询）
+         2、添加笔记查询功能（根据标题查询）
+	 
 附加功能：根据自身实际情况进行扩充，以下是建议的扩展功能
 				1、UI美化
 				2、更改记事本的背景
@@ -26,15 +27,18 @@
 **基本功能：**
 1、NoteList中显示条目增加时间戳显示：
  2、添加笔记查询功能（根据标题查询）：
+ 
 **扩展功能：**
 1、UI美化、更改记事本的背景：主要是对便签换了主题
 2、导出笔记
 3、对笔记进行排序：根据修改时间和创建时间排序
  4、对字体大小颜色进行改变
+ 
 **（2）结果截图**
 **基本功能：**
 1、NoteList中显示条目增加时间戳显示：
  2、添加笔记查询功能（根据标题查询）：
+ 
 **扩展功能：**
 1、UI美化、更改记事本的背景：主要是对便签换了主题
 2、导出笔记
@@ -44,8 +48,8 @@
 ### (1)关键代码
 ### 基本功能：
 #### 1、NoteList中显示条目增加时间戳显示：
-**1、添加时间TextView：
-noteslist_item.xml:**
+**1、添加时间TextView：**
+**noteslist_item.xml:**
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <!--添加一个垂直的线性布局-->
@@ -74,9 +78,9 @@ noteslist_item.xml:**
     android:textColor="@color/black"/>
 </LinearLayout>
 ```
-**2、
-（1）NotePadProvider.java中，创建的数据库中已经存在了COLUMN_NAME_CREATE_DATE，COLUMN_NAME_MODIFICATION_DATE，创建的时间和修改的时间都已经在数据库中。
-**
+**2、**
+**（1）NotePadProvider.java中，创建的数据库中已经存在了COLUMN_NAME_CREATE_DATE，COLUMN_NAME_MODIFICATION_DATE，创建的时间和修改的时间都已经在数据库中。**
+
 ```
  @Override
        public void onCreate(SQLiteDatabase db) {
@@ -89,6 +93,7 @@ noteslist_item.xml:**
                    + ");");
        }
 ```
+
 **（2）NotesList的数据定义中增加修改时间**
 ```
  private static final String[] PROJECTION = new String[] {
@@ -97,12 +102,14 @@ noteslist_item.xml:**
             NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE,//在这里加入了修改时间的显示
     };
 ```
+
 **(3)Cursor不变,装配的时装配相应的日期，所以dataColumns,viewIDs这两个参数需要加入时间**
 ```
     String[] dataColumns = { NotePad.Notes.COLUMN_NAME_TITLE,NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE } ;
         int[] viewIDs = { android.R.id.text1,R.id.text2 };
 ```
 **(4)NotePadProvider中的insert方法和NoteEditor中的updateNote方法**
+
 NotePadProvider中的insert方法中:
 ```
 //修改时间
@@ -119,6 +126,7 @@ if (values.containsKey(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE) == false) {
     values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, dateTime);
 }
 ```
+
 NoteEditor中的updateNote方法中：
 ```
  //修改时间
