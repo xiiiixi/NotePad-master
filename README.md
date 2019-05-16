@@ -1,5 +1,5 @@
-# NotePad-master
-记事本应用--这是期中实验
+# NotePad-master 
+#记事本应用--这是期中实验
 
 # 期中实验
 学号：123012016072 
@@ -10,7 +10,7 @@
 笔记本应用：
 基本要求：1、NoteList中显示条目增加时间戳显示
          2、添加笔记查询功能（根据标题查询）
-	 
+		   
 附加功能：根据自身实际情况进行扩充，以下是建议的扩展功能
 				1、UI美化
 				2、更改记事本的背景
@@ -24,9 +24,10 @@
 ## 二、实验步骤和结果
 ## 目录结构：
 **（1）关键代码**
+
 **基本功能：**
 1、NoteList中显示条目增加时间戳显示：
- 2、添加笔记查询功能（根据标题查询）：
+2、添加笔记查询功能（根据标题查询）：
  
 **扩展功能：**
 1、UI美化、更改记事本的背景：主要是对便签换了主题
@@ -35,6 +36,7 @@
  4、对字体大小颜色进行改变
  
 **（2）结果截图**
+
 **基本功能：**
 1、NoteList中显示条目增加时间戳显示：
  2、添加笔记查询功能（根据标题查询）：
@@ -78,9 +80,9 @@
     android:textColor="@color/black"/>
 </LinearLayout>
 ```
+
 **2、**
 **（1）NotePadProvider.java中，创建的数据库中已经存在了COLUMN_NAME_CREATE_DATE，COLUMN_NAME_MODIFICATION_DATE，创建的时间和修改的时间都已经在数据库中。**
-
 ```
  @Override
        public void onCreate(SQLiteDatabase db) {
@@ -109,7 +111,6 @@
         int[] viewIDs = { android.R.id.text1,R.id.text2 };
 ```
 **(4)NotePadProvider中的insert方法和NoteEditor中的updateNote方法**
-
 NotePadProvider中的insert方法中:
 ```
 //修改时间
@@ -126,7 +127,6 @@ if (values.containsKey(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE) == false) {
     values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, dateTime);
 }
 ```
-
 NoteEditor中的updateNote方法中：
 ```
  //修改时间
@@ -148,6 +148,7 @@ NoteEditor中的updateNote方法中：
         android:icon="@android:drawable/ic_search_category_default"
         android:showAsAction="always">
 ```
+
 **(2)NoteList中onOptionsItemSelected添加对应的case**
 ```
  //添加搜索
@@ -155,6 +156,7 @@ NoteEditor中的updateNote方法中：
                 startActivity(new Intent(Intent.ACTION_SEARCH,getIntent().getData()));
                 return true;
 ```
+
 **(3)AndroidManifest.xml**
 ```
         <!--添加搜索activity-->
@@ -173,7 +175,8 @@ NoteEditor中的updateNote方法中：
             </intent-filter>
         </activity>
 ```
-**(4)NoteSearch.java: **
+
+**(4)NoteSearch.java:**
 ```
 package com.example.android.notepad;
 import android.app.ListActivity;
@@ -251,6 +254,7 @@ public class NoteSearch  extends ListActivity  implements SearchView.OnQueryText
 ```
 android:theme="@android:style/Theme.Holo.Light"
 ```
+
 #### 2、导出笔记
 **(1)editor_options_menu.xml:在菜单文件中添加一个导出笔记的选项**
 ```
@@ -588,6 +592,7 @@ NotePadProvider.java：**
 ### 扩展功能：
 #### 1、UI美化、更改记事本的背景：主要是对便签换了主题
 将所有界面都换成白色：
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190516191305959.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190516191353755.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
 
@@ -598,13 +603,16 @@ NotePadProvider.java：**
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190516191540663.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190516191647128.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
 
-#### 3、对笔记进行排序：根据修改时间和创建时间排序
+#### 3、对笔记进行排序：根据修改时间和创建时间排序：**
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190516191717294.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
+
 **根据创建时间排序：**
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190516191806430.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
 
 **根据修改时间排序：**
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190516191822380.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
+
 #### 4、对字体大小颜色进行改变
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190516191857492.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190516191836893.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
