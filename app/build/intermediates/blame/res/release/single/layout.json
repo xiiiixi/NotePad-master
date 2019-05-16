@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\Protice\\NotePad-master\\app\\build\\intermediates\\res\\merged\\release\\layout\\noteslist_item.xml",
+        "source": "D:\\Protice\\NotePad-master\\app\\src\\main\\res\\layout\\noteslist_item.xml"
+    },
+    {
+        "merged": "D:\\Protice\\NotePad-master\\app\\build\\intermediates\\res\\merged\\release\\layout\\note_editor.xml",
+        "source": "D:\\Protice\\NotePad-master\\app\\src\\main\\res\\layout\\note_editor.xml"
+    },
+    {
+        "merged": "D:\\Protice\\NotePad-master\\app\\build\\intermediates\\res\\merged\\release\\layout\\title_editor.xml",
+        "source": "D:\\Protice\\NotePad-master\\app\\src\\main\\res\\layout\\title_editor.xml"
+    }
+]

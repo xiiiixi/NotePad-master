@@ -1,0 +1,4 @@
+#Thu May 16 18:42:05 CST 2019
+base.0=D\:\\Protice\\NotePad-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\44
+path.0=classes.dex
+renamed.0=classes.dex
